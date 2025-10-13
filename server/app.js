@@ -9,7 +9,7 @@ const app = express();
 app.use(express.json());
 
 app.use(cors({
-    origin: "http://localhost:5173",
+    origin: "https://pdi-experts-l99p.vercel.app",
     credentials: true
 }));
 
