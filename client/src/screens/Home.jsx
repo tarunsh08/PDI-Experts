@@ -164,7 +164,7 @@ const Home = () => {
               <p className="text-neutral-300 text-lg mb-8 max-w-2xl mx-auto">
                 Schedule your PDI service today and experience professional vehicle inspection with guaranteed satisfaction
               </p>
-              <button className="inline-block bg-orange-400 hover:bg-orange-500 text-white px-8 py-4 rounded-xl font-semibold transition-all shadow-lg hover:shadow-xl hover:-translate-y-1">
+              <button onClick={() => navigate("/book-appointment")} className="inline-block bg-orange-400 hover:bg-orange-500 text-white px-8 py-4 rounded-xl font-semibold transition-all shadow-lg hover:shadow-xl hover:-translate-y-1">
                 Book Your Service Now
               </button>
             </div>

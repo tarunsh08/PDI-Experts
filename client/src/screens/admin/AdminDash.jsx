@@ -54,7 +54,51 @@ const AdminDash = () => {
                 <div className="text-2xl font-bold my-6 text-neutral-800 text-center">
                     Add Post to Service Updates
                 </div>
-                <form className="max-w-2xl mx-auto bg-white p-6 rounded-lg shadow-md">
+                <form 
+                    className="max-w-2xl mx-auto bg-white p-6 rounded-lg shadow-md"
+                    onSubmit={async (e) => {
+                        e.preventDefault();
+                        try {
+                            const formData = new FormData(e.target);
+                            
+                            // Create a service object from form data
+                            const serviceData = {
+                                title: formData.get('title'),
+                                vehicleModel: formData.get('vehicleModel'),
+                                description: formData.get('description'),
+                                partsUpgraded: formData.get('partsUpgraded'),
+                                technician: formData.get('technician'),
+                                date: formData.get('date'),
+                            };
+
+                            // Create FormData for file upload
+                            const uploadData = new FormData();
+                            uploadData.append('image', formData.get('image'));
+                            
+                            // Add other fields to FormData
+                            Object.entries(serviceData).forEach(([key, value]) => {
+                                uploadData.append(key, value);
+                            });
+
+                            const response = await axios.post(
+                                `${import.meta.env.VITE_API_URL}/api/v1/admin/admin/v1/service`,
+                                uploadData,
+                                {
+                                    headers: {
+                                        'Content-Type': 'multipart/form-data',
+                                        Authorization: `Bearer ${localStorage.getItem('adminToken')}`
+                                    }
+                                }
+                            );
+
+                            alert('Service created successfully!');
+                            e.target.reset();
+                        } catch (error) {
+                            console.error('Error creating service:', error);
+                            alert(error.response?.data?.message || 'Failed to create service');
+                        }
+                    }}
+                >
                     <div className="mb-4">
                         <label className="block text-neutral-700 font-medium mb-2" htmlFor="title">
                             Title
@@ -62,18 +106,22 @@ const AdminDash = () => {
                         <input
                             type="text"
                             id="title"
+                            name="title"
+                            required
                             placeholder="e.g., Performance Exhaust System Upgrade"
                             className="w-full p-2 rounded-lg border border-neutral-300 focus:outline-none focus:ring-2 focus:ring-orange-300"
                         />
                     </div>
 
                     <div className="mb-4">
-                        <label className="block text-neutral-700 font-medium mb-2" htmlFor="vehicle">
+                        <label className="block text-neutral-700 font-medium mb-2" htmlFor="vehicleModel">
                             Vehicle Model
                         </label>
                         <input
                             type="text"
-                            id="vehicle"
+                            id="vehicleModel"
+                            name="vehicleModel"
+                            required
                             placeholder="e.g., Honda Civic 2023"
                             className="w-full p-2 rounded-lg border border-neutral-300 focus:outline-none focus:ring-2 focus:ring-orange-300"
                         />
@@ -85,18 +133,22 @@ const AdminDash = () => {
                         </label>
                         <textarea
                             id="description"
+                            name="description"
+                            required
                             placeholder="e.g., Installed high-performance stainless steel exhaust system with sport silencer for enhanced engine sound and improved airflow."
                             className="w-full p-2 rounded-lg border border-neutral-300 focus:outline-none focus:ring-2 focus:ring-orange-300 h-24"
                         ></textarea>
                     </div>
 
                     <div className="mb-4">
-                        <label className="block text-neutral-700 font-medium mb-2" htmlFor="technician">
-                        Parts Upgraded or added
+                        <label className="block text-neutral-700 font-medium mb-2" htmlFor="partsUpgraded">
+                            Parts Upgraded or added
                         </label>
                         <input
                             type="text"
-                            id="parts-upgraded"
+                            id="partsUpgraded"
+                            name="partsUpgraded"
+                            required
                             placeholder="e.g., Silencer"
                             className="w-full p-2 rounded-lg border border-neutral-300 focus:outline-none focus:ring-2 focus:ring-orange-300"
                         />
@@ -109,14 +161,25 @@ const AdminDash = () => {
                         <input
                             type="text"
                             id="technician"
+                            name="technician"
+                            required
                             placeholder="e.g., John Davis"
                             className="w-full p-2 rounded-lg border border-neutral-300 focus:outline-none focus:ring-2 focus:ring-orange-300"
                         />
                     </div>
 
                     <div className='mb-4'>
-                        <label htmlFor="image" className="block text-neutral-700 font-medium mb-2">Image</label>
-                        <input type="file" id="image" className="w-full p-2 rounded-lg border border-neutral-300 focus:outline-none focus:ring-2 focus:ring-orange-300" />
+                        <label htmlFor="image" className="block text-neutral-700 font-medium mb-2">
+                            Image
+                        </label>
+                        <input 
+                            type="file" 
+                            id="image" 
+                            name="image"
+                            accept="image/*"
+                            required
+                            className="w-full p-2 rounded-lg border border-neutral-300 focus:outline-none focus:ring-2 focus:ring-orange-300" 
+                        />
                     </div>
 
                     <div className="mb-4">
@@ -126,6 +189,8 @@ const AdminDash = () => {
                         <input
                             type="date"
                             id="date"
+                            name="date"
+                            required
                             className="w-full p-2 rounded-lg border border-neutral-300 focus:outline-none focus:ring-2 focus:ring-orange-300"
                         />
                     </div>
