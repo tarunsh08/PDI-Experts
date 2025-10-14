@@ -36,7 +36,7 @@ const Contact = () => {
                 <FaPhoneAlt className="text-orange-300" />
                 <div>
                   <h3 className="font-medium">Phone</h3>
-                  <p className="text-sm text-neutral-600">+91 8700732907</p>
+                  <p className="text-sm text-neutral-600">+91 8700732907, +91 7042378299</p>
                 </div>
               </div>
               <div className="flex items-center gap-3 text-neutral-700">
@@ -51,9 +51,7 @@ const Contact = () => {
             </div>
             <div className="mt-6">
               <h3 className="text-lg font-semibold text-neutral-800 mb-2">Working Hours</h3>
-              <p className="text-sm text-neutral-600">Monday - Friday: 8:00 AM - 6:00 PM</p>
-              <p className="text-sm text-neutral-600">Saturday: 9:00 AM - 2:00 PM</p>
-              <p className="text-sm text-neutral-600">Sunday: Closed</p>
+              <p className="text-sm text-neutral-600">Monday - Sunday: 8:00 AM - 6:00 PM</p>
             </div>
           </div>
 

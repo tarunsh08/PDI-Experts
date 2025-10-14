@@ -26,7 +26,7 @@ const Navbar = () => {
             <FaTools className="text-white text-lg" />
           </div>
           <span className="text-xl font-bold text-neutral-900 tracking-tight">
-            PDI<span className="text-orange-400">Pro</span>
+            PDI<span className="text-orange-400">Experts</span>
           </span>
         </Link>
 

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { FaTools, FaCalendarCheck, FaCheckCircle, FaShieldAlt, FaArrowRight, FaStar, FaPhone, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
+import { FaTools, FaCalendarCheck, FaCheckCircle, FaShieldAlt, FaArrowRight, FaStar, FaPhone, FaEnvelope, FaMapMarkerAlt, FaFacebook, FaTwitter, FaInstagram, FaClock } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 
@@ -9,14 +9,26 @@ const Home = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-neutral-50 via-neutral-100 to-neutral-50 text-neutral-800 font-sans">
-      
+
+      {/* Mobile Hero Image - Only visible on mobile */}
+      <div className="md:hidden w-full flex items-center justify-center p-6">
+        <div className="relative group">
+          <div className="absolute -inset-2 bg-gradient-to-br from-orange-300 to-orange-500 rounded-[60%_40%_30%_70%_/_60%_30%_70%_40%] transform -rotate-6 group-hover:rotate-0 transition-transform duration-700"></div>
+          <img
+            src="/hero.webp"
+            alt="PDI Experts Logo"
+            className="relative w-full h-auto rounded-[60%_40%_30%_70%_/_60%_30%_70%_40%] border-4 border-white shadow-2xl transform group-hover:scale-105 transition-all duration-500"
+          />
+        </div>
+      </div>
+
       {/* Hero Section */}
-      <section className="min-h-screen flex items-center relative overflow-hidden">
+      <section className="py-12 md:min-h-[calc(100vh-4rem)] flex items-center relative overflow-hidden">
         <div className="absolute inset-0 opacity-40">
           <div className="absolute top-20 right-10 w-72 h-72 bg-orange-200 rounded-full mix-blend-multiply filter blur-3xl"></div>
           <div className="absolute bottom-20 left-10 w-72 h-72 bg-neutral-200 rounded-full mix-blend-multiply filter blur-3xl"></div>
         </div>
-        
+
         <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-8 py-20 grid md:grid-cols-2 gap-12 items-center">
           <div className="space-y-4">
             <div className="inline-block">
@@ -26,7 +38,7 @@ const Home = () => {
               Your Vehicle's <span className="bg-gradient-to-r from-orange-400 to-orange-300 bg-clip-text text-transparent">Perfect Start</span>
             </h1>
             <p className="text-neutral-600 text-lg md:text-xl leading-relaxed max-w-lg">
-              Professional Pre-Delivery Inspection for cars and bikes. Expert certification, premium quality assurance, and complete peace of mind.
+              Professional Pre-Delivery Inspection for cars. Expert certification, premium quality assurance, and complete peace of mind.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
               <button className="flex items-center justify-center gap-2 bg-orange-400 text-white px-8 py-4 rounded-xl font-semibold hover:bg-orange-500 transition-all shadow-lg hover:shadow-xl hover:-translate-y-1 cursor-pointer" onClick={() => navigate("/book-appointment")}>
@@ -39,7 +51,7 @@ const Home = () => {
             </div>
             <div className="flex gap-8 pt-6 border-t border-neutral-200">
               <div>
-                <p className="text-2xl font-bold text-neutral-900">500+</p>
+                <p className="text-2xl font-bold text-neutral-900">5000+</p>
                 <p className="text-sm text-neutral-500">Happy Customers</p>
               </div>
               <div>
@@ -47,16 +59,16 @@ const Home = () => {
                 <p className="text-sm text-neutral-500">Satisfaction Rate</p>
               </div>
               <div>
-                <p className="text-2xl font-bold text-neutral-900">10+</p>
+                <p className="text-2xl font-bold text-neutral-900">20+</p>
                 <p className="text-sm text-neutral-500">Years Experience</p>
               </div>
             </div>
           </div>
-          
+
           <div className="relative hidden md:block">
             <div className="relative w-full h-96 bg-gradient-to-br from-neutral-200 to-neutral-300 rounded-2xl overflow-hidden shadow-2xl">
-              <img 
-                src="https://images.unsplash.com/photo-1646105777308-39b1a8564151?ixlib=rb-4.1.0&auto=format&fit=crop&q=80&w=600" 
+              <img
+                src="https://images.unsplash.com/photo-1646105777308-39b1a8564151?ixlib=rb-4.1.0&auto=format&fit=crop&q=80&w=600"
                 alt="Premium PDI Service"
                 className="w-full h-full object-cover"
               />
@@ -69,17 +81,17 @@ const Home = () => {
       <section id="why-us" className="py-24 px-4 md:px-8 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-4xl font-bold text-neutral-900 mb-4">Why Choose PDI Pro Service?</h2>
+            <h2 className="text-4xl md:text-4xl font-bold text-neutral-900 mb-4">Why Choose PDI Experts?</h2>
             <p className="text-neutral-500 text-lg">Excellence delivered with every inspection</p>
             <div className="w-16 h-1 bg-orange-400 mx-auto mt-4 rounded-full"></div>
           </div>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
               {
                 icon: FaTools,
-                title: "Expert Technicians",
-                desc: "Certified engineers with 10+ years of specialized PDI experience",
+                title: "Expert Engineers",
+                desc: "Certified engineers with 20+ years of specialized PDI experience",
               },
               {
                 icon: FaCheckCircle,
@@ -93,25 +105,23 @@ const Home = () => {
               },
               {
                 icon: FaShieldAlt,
-                title: "Warranty Backed",
-                desc: "Comprehensive warranty on all work with transparent guarantees",
+                title: "Comprehensive PDI",
+                desc: "Thorough, multi-point inspection to catch every detail before delivery",
               },
             ].map((item, idx) => (
               <div
                 key={idx}
                 onMouseEnter={() => setHoveredCard(idx)}
                 onMouseLeave={() => setHoveredCard(null)}
-                className={`relative p-6 rounded-2xl transition-all duration-300 cursor-pointer ${
-                  hoveredCard === idx
-                    ? "bg-gradient-to-br from-orange-50 to-orange-100 shadow-xl -translate-y-2"
-                    : "bg-neutral-50 shadow-md hover:shadow-lg"
-                }`}
+                className={`relative p-6 rounded-2xl transition-all duration-300 cursor-pointer ${hoveredCard === idx
+                  ? "bg-gradient-to-br from-orange-50 to-orange-100 shadow-xl -translate-y-2"
+                  : "bg-neutral-50 shadow-md hover:shadow-lg"
+                  }`}
               >
-                <div className={`w-14 h-14 rounded-xl flex items-center justify-center mb-4 transition-all ${
-                  hoveredCard === idx
-                    ? "bg-orange-400 text-white"
-                    : "bg-orange-100 text-orange-400"
-                }`}>
+                <div className={`w-14 h-14 rounded-xl flex items-center justify-center mb-4 transition-all ${hoveredCard === idx
+                  ? "bg-orange-400 text-white"
+                  : "bg-orange-100 text-orange-400"
+                  }`}>
                   <item.icon className="text-2xl" />
                 </div>
                 <h3 className="text-xl font-bold text-neutral-900 mb-2">{item.title}</h3>
@@ -145,7 +155,7 @@ const Home = () => {
                   <h3 className="text-xl font-bold text-neutral-900 mt-1">{service.title}</h3>
                 </div>
                 <p className="text-neutral-600 mb-4">{service.items}</p>
-                <button className="text-orange-400 font-semibold flex items-center gap-2 group-hover:gap-3 transition-all">
+                <button onClick={() => navigate("/about")} className="text-orange-400 font-semibold flex items-center gap-2 group-hover:gap-3 transition-all cursor-pointer">
                   Learn More <FaArrowRight className="text-sm" />
                 </button>
               </div>
@@ -181,7 +191,7 @@ const Home = () => {
                 <div className="w-10 h-10 bg-orange-400 rounded-lg flex items-center justify-center">
                   <FaTools className="text-white" />
                 </div>
-                <h3 className="text-lg font-bold text-white">PDI Pro Service</h3>
+                <h3 className="text-lg font-bold text-white">PDI Experts</h3>
               </div>
               <p className="text-sm text-neutral-400 leading-relaxed">
                 Professional Pre-Delivery Inspection services for your peace of mind.
@@ -198,37 +208,79 @@ const Home = () => {
               </ul>
             </div>
 
+            <div className="md:col-span-2">
+              <h3 className="text-lg font-semibold text-white mb-4">Brands</h3>
+              <ul className="space-y-3 grid grid-cols-3 gap-1 text-sm">
+                <li><a href="#" className="text-neutral-400 hover:text-orange-400 transition-colors">Audi</a></li>
+                <li><a href="#" className="text-neutral-400 hover:text-orange-400 transition-colors">Datsun</a></li>
+                <li><a href="#" className="text-neutral-400 hover:text-orange-400 transition-colors">Isuzu</a></li>
+                <li><a href="#" className="text-neutral-400 hover:text-orange-400 transition-colors">Volkswagen</a></li>
+                <li><a href="#" className="text-neutral-400 hover:text-orange-400 transition-colors">Toyota</a></li>
+                <li><a href="#" className="text-neutral-400 hover:text-orange-400 transition-colors">Honda</a></li>
+                <li><a href="#" className="text-neutral-400 hover:text-orange-400 transition-colors">Hyundai</a></li>
+                <li><a href="#" className="text-neutral-400 hover:text-orange-400 transition-colors">Nissan</a></li>
+                <li><a href="#" className="text-neutral-400 hover:text-orange-400 transition-colors">Mitsubishi</a></li>
+                <li><a href="#" className="text-neutral-400 hover:text-orange-400 transition-colors">Maruti</a></li>
+                <li><a href="#" className="text-neutral-400 hover:text-orange-400 transition-colors">Volvo</a></li>
+                <li><a href="#" className="text-neutral-400 hover:text-orange-400 transition-colors">Ford</a></li>
+              </ul>
+            </div>
+
+            <div className="flex gap-4">
+              <div>
+                <h3 className="text-lg font-semibold text-white">Contact Us</h3>
+                <ul className="space-y-3 text-sm mb-3">
+                  <li className="flex items-start gap-2">
+                    <FaMapMarkerAlt className="text-orange-400 mt-1 flex-shrink-0" />
+                    <span>Pillar no. 127, Near Guldhar Rapid Station</span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <FaPhone className="text-orange-400 flex-shrink-0" />
+                    <a href="tel:+918700732907" className="hover:text-orange-400 transition-colors">+91 8700732907, +91 7042378299</a>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <FaEnvelope className="text-orange-400 flex-shrink-0" />
+                    <a href="mailto:pdiexpert01@gmail.com" className="hover:text-orange-400 transition-colors">pdiexpert01@gmail.com</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
             <div>
-              <h3 className="text-lg font-semibold text-white mb-4">Services</h3>
+              <h3 className="text-lg font-semibold text-white mb-4">Social Media</h3>
               <ul className="space-y-3 text-sm">
-                <li><a href="#" className="text-neutral-400 hover:text-orange-400 transition-colors">Car PDI</a></li>
-                <li><a href="#" className="text-neutral-400 hover:text-orange-400 transition-colors">Bike PDI</a></li>
-                <li><a href="#" className="text-neutral-400 hover:text-orange-400 transition-colors">Quality Check</a></li>
-                <li><a href="#" className="text-neutral-400 hover:text-orange-400 transition-colors">Warranty</a></li>
+                <li className="flex items-center gap-2">
+                  <FaFacebook className="text-orange-400 flex-shrink-0" />
+                  <a href="#" className="hover:text-orange-400 transition-colors">Facebook</a>
+                </li>
+                <li className="flex items-center gap-2">
+                  <FaTwitter className="text-orange-400 flex-shrink-0" />
+                  <a href="#" className="hover:text-orange-400 transition-colors">Twitter</a>
+                </li>
+                <li className="flex items-center gap-2">
+                  <FaInstagram className="text-orange-400 flex-shrink-0" />
+                  <a href="#" className="hover:text-orange-400 transition-colors">Instagram</a>
+                </li>
               </ul>
             </div>
 
             <div>
-              <h3 className="text-lg font-semibold text-white mb-4">Contact Us</h3>
+              <h3 className="text-lg font-semibold text-white mb-4">Working Hours</h3>
               <ul className="space-y-3 text-sm">
-                <li className="flex items-start gap-2">
-                  <FaMapMarkerAlt className="text-orange-400 mt-1 flex-shrink-0" />
-                  <span>Pillar no. 127, Near Guldhar Rapid Station</span>
+                <li className="flex items-center gap-2">
+                  <FaClock className="text-orange-400 flex-shrink-0" />
+                  <span>Monday - Sunday</span>
                 </li>
                 <li className="flex items-center gap-2">
-                  <FaPhone className="text-orange-400 flex-shrink-0" />
-                  <a href="tel:+918700732907" className="hover:text-orange-400 transition-colors">+91 8700732907</a>
-                </li>
-                <li className="flex items-center gap-2">
-                  <FaEnvelope className="text-orange-400 flex-shrink-0" />
-                  <a href="mailto:pdiexpert01@gmail.com" className="hover:text-orange-400 transition-colors">pdiexpert01@gmail.com</a>
+                  <FaClock className="text-orange-400 flex-shrink-0" />
+                  <span>10:00 AM - 7:00 PM</span>
                 </li>
               </ul>
             </div>
           </div>
 
           <div className="border-t border-neutral-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-sm text-neutral-500">© 2024 PDI Pro Service. All rights reserved.</p>
+            <p className="text-sm text-neutral-500">© 2025 PDI Experts. All rights reserved.</p>
             <div className="flex gap-6 text-sm">
               <a href="#" className="text-neutral-400 hover:text-orange-400 transition-colors">Privacy Policy</a>
               <a href="#" className="text-neutral-400 hover:text-orange-400 transition-colors">Terms of Service</a>

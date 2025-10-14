@@ -2,9 +2,9 @@ import Appointment from "../models/Appointment.js";
 
 export const createAppointment = async (req, res) => {
     try {
-        const { fullName, email, phone, vehicleType, serviceType, date } = req.body;
+        const { fullName, email, phone, serviceType, date, vehicleBrand, vehicleModel, vehicleYear, otherDetails } = req.body;
 
-        if(!fullName || !email || !phone || !vehicleType || !serviceType || !date) {
+        if(!fullName || !email || !phone || !serviceType || !date || !vehicleBrand || !vehicleModel || !vehicleYear) {
             return res.status(400).json({ message: "All fields are required" });
         }
 
@@ -12,9 +12,12 @@ export const createAppointment = async (req, res) => {
             fullName,
             email,
             phone,
-            vehicleType,
             serviceType,
-            date
+            date,
+            vehicleBrand,
+            vehicleModel,
+            vehicleYear,
+            otherDetails
         });
 
         return res.status(201).json({ message: "Appointment created successfully", appointment });

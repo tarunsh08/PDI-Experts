@@ -6,16 +6,16 @@ const About = () => {
   // Sample data inspired by the service updates structure
   const teamMembers = [
     {
-      name: "John Davis",
-      role: "Lead Mechanic",
-      description: "With over 10 years of experience, John specializes in performance upgrades and exhaust systems.",
-      image: "https://via.placeholder.com/150?text=John+Davis",
+      name: "Vineet Tyagi",
+      experience: "20+ years",
     },
     {
-      name: "Sarah Miller",
-      role: "Service Manager",
-      description: "Sarah oversees all service appointments and ensures top-quality customer satisfaction.",
-      image: "https://via.placeholder.com/150?text=Sarah+Miller",
+      name: "Sandeep Tyagi",
+      experience: "10+ years",
+    },
+    {
+      name: "Deepak Tripathi",
+      experience: "10+ years",
     },
   ];
 
@@ -41,7 +41,7 @@ const About = () => {
             Our Story
           </h2>
           <p className="text-neutral-700 text-base md:text-lg mb-8 text-center max-w-2xl mx-auto">
-            PDI Experts is dedicated to delivering excellence in Pre-Delivery Inspection services for cars and bikes. Founded with a passion for automotive care, we combine expert mechanics, premium parts, and a commitment to customer satisfaction. Our mission is to ensure every vehicle leaves our shop in peak condition, ready for the road ahead.
+            PDI Experts is dedicated to delivering excellence in Pre-Delivery Inspection services for cars. Founded with a passion for automotive care, we combine expert mechanics, premium parts, and a commitment to customer satisfaction. Our mission is to ensure every vehicle leaves our shop in peak condition, ready for the road ahead.
           </p>
 
           <h2 className="text-2xl md:text-3xl font-bold text-neutral-800 mb-6 text-center">
@@ -50,14 +50,8 @@ const About = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {teamMembers.map((member, index) => (
               <div key={index} className="bg-white p-6 rounded-lg shadow-md text-center">
-                <img
-                  src={member.image}
-                  alt={member.name}
-                  className="w-36 h-36 object-cover rounded-full mx-auto mb-4"
-                />
                 <h3 className="text-xl font-semibold text-neutral-800">{member.name}</h3>
-                <p className="text-neutral-600 text-sm mb-2">{member.role}</p>
-                <p className="text-neutral-700 text-sm">{member.description}</p>
+                <p className="text-neutral-700 text-sm">{member.experience}</p>
               </div>
             ))}
           </div>

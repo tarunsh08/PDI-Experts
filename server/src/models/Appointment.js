@@ -16,11 +16,6 @@ const appointmentSchema = new mongoose.Schema({
         required: true,
         trim: true,
     },
-    vehicleType: {
-        type: String,
-        enum: ['Car', 'Bike'],
-        required: true,
-    },
     vehicleBrand: {
         type: String
     },

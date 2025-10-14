@@ -109,22 +109,22 @@ const AdminAppointment = () => {
                             </dd>
                         </div>
                         <div className="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-                            <dt className="text-sm font-medium text-gray-500">Vehicle Type</dt>
+                            <dt className="text-sm font-medium text-gray-500">Vehicle Brand</dt>
                             <dd className="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                                {appointment.vehicleType}
+                                {appointment.vehicleBrand}
                             </dd>
                         </div>
                         <div className="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
                             <dt className="text-sm font-medium text-gray-500">Appointment Date</dt>
                             <dd className="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                                {new Date(appointment.createdAt).toLocaleDateString()}
+                                {new Date(appointment.date).toLocaleDateString()}
                             </dd>
                         </div>
-                        {appointment.additionalNotes && (
+                        {appointment.otherDetails && (
                             <div className="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
                                 <dt className="text-sm font-medium text-gray-500">Additional Notes</dt>
                                 <dd className="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                                    {appointment.additionalNotes}
+                                    {appointment.otherDetails}
                                 </dd>
                             </div>
                         )}

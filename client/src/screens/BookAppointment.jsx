@@ -185,7 +185,7 @@ const BookAppointment = () => {
                   Appointment Date <span className="text-red-500">*</span>
                 </label>
                 <input
-                  type="datetime-local"
+                  type="date"
                   name="date"
                   value={formData.date}
                   onChange={handleChange}
@@ -204,41 +204,6 @@ const BookAppointment = () => {
               </div>
               Vehicle Information
             </h2>
-
-            {/* Vehicle Type */}
-            <div className="mb-6">
-              <label className="block text-sm font-semibold text-neutral-700 mb-3">
-                Vehicle Type <span className="text-red-500">*</span>
-              </label>
-              <div className="flex gap-4">
-                {["Car", "Bike"].map((type) => (
-                  <label key={type} className="flex items-center cursor-pointer group">
-                    <input
-                      type="radio"
-                      name="vehicleType"
-                      value={type}
-                      checked={formData.vehicleType === type}
-                      onChange={handleChange}
-                      className="hidden"
-                    />
-                    <div
-                      className={`flex items-center justify-center gap-3 px-6 py-3 rounded-lg border-2 transition-all ${
-                        formData.vehicleType === type
-                          ? "border-orange-400 bg-orange-50"
-                          : "border-neutral-300 bg-neutral-50 hover:border-orange-300"
-                      }`}
-                    >
-                      {type === "Car" ? (
-                        <FaCar className="text-xl text-orange-400" />
-                      ) : (
-                        <FaMotorcycle className="text-xl text-orange-400" />
-                      )}
-                      <span className="font-semibold text-neutral-800">{type}</span>
-                    </div>
-                  </label>
-                ))}
-              </div>
-            </div>
 
             {/* Vehicle Details Grid */}
             <div className="grid md:grid-cols-3 gap-6">
