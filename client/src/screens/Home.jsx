@@ -11,7 +11,7 @@ const Home = () => {
     <div className="min-h-screen bg-gradient-to-br from-neutral-50 via-neutral-100 to-neutral-50 text-neutral-800 font-sans">
 
       {/* Mobile Hero Image - Only visible on mobile */}
-      <div className="md:hidden w-full flex items-center justify-center p-6">
+      <div className="md:hidden w-full flex items-center justify-center p-4">
         <div className="relative group">
           <div className="absolute -inset-2 bg-gradient-to-br from-orange-300 to-orange-500 rounded-[60%_40%_30%_70%_/_60%_30%_70%_40%] transform -rotate-6 group-hover:rotate-0 transition-transform duration-700"></div>
           <img
@@ -29,7 +29,7 @@ const Home = () => {
           <div className="absolute bottom-20 left-10 w-72 h-72 bg-neutral-200 rounded-full mix-blend-multiply filter blur-3xl"></div>
         </div>
 
-        <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-8 py-20 grid md:grid-cols-2 gap-12 items-center">
+        <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-8 py-10 grid md:grid-cols-2 gap-12 items-center">
           <div className="space-y-4">
             <div className="inline-block">
               <span className="bg-orange-100 text-orange-700 px-4 py-2 rounded-full text-sm font-semibold">🚗 Premium PDI Service</span>
