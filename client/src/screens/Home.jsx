@@ -232,11 +232,11 @@ const Home = () => {
                 <ul className="space-y-3 text-sm mb-3">
                   <li className="flex items-start gap-2">
                     <FaMapMarkerAlt className="text-orange-400 mt-1 flex-shrink-0" />
-                    <span>Pillar no. 127, Near Guldhar Rapid Station</span>
+                    <span>Plot no. 127, Near Guldhar Rapid Metro Station, Opp. Pillar No. 631</span>
                   </li>
                   <li className="flex items-center gap-2">
                     <FaPhone className="text-orange-400 flex-shrink-0" />
-                    <a href="tel:+918700732907" className="hover:text-orange-400 transition-colors">+91 8700732907, +91 7042378299</a>
+                    <a href="tel:+918700732907" className="hover:text-orange-400 transition-colors">+91 8700732907, +91 7042338299</a>
                   </li>
                   <li className="flex items-center gap-2">
                     <FaEnvelope className="text-orange-400 flex-shrink-0" />
