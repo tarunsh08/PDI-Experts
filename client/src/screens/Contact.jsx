@@ -10,7 +10,7 @@ const Contact = () => {
         <div className="absolute inset-0 bg-neutral-900/40 backdrop-blur-[1px]"></div>
         <div className="relative z-10 flex flex-col justify-center items-center text-center h-full px-4 md:px-6 py-12">
           <h1 className="text-3xl md:text-5xl font-extrabold mb-4 leading-tight tracking-wide text-neutral-50">
-            Contact <span className="text-orange-300">PDI Experts</span>
+            Contact <span className="text-orange-300">PDI Mafia</span>
           </h1>
           <p className="max-w-xl text-neutral-200 text-base md:text-lg mb-6 font-light">
             Get in touch with us for all your PDI service needs.
@@ -43,8 +43,8 @@ const Contact = () => {
                 <FaEnvelope className="text-orange-300" />
                 <div>
                   <h3 className="font-medium">Email</h3>
-                  <a href="mailto:pdiexpert01@gmail.com" className="text-sm text-neutral-600 hover:text-orange-300">
-                    pdiexpert01@gmail.com
+                  <a href="mailto:pdimafia01@gmail.com" className="text-sm text-neutral-600 hover:text-orange-300">
+                    pdimafia01@gmail.com
                   </a>
                 </div>
               </div>
@@ -119,7 +119,7 @@ const Contact = () => {
           <h2 className="text-2xl font-bold text-neutral-800 mb-6 text-center">Find Us</h2>
           <div className="bg-white rounded-lg shadow-md overflow-hidden">
             <iframe
-              title="PDI Experts Location"
+              title="PDI Mafia Location"
               src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d3432.887122659672!2d77.44534075631756!3d28.700886616995078!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1s%20Guldhar%20Rapid%20Metro%20Station%2C%20Pillar%20No.%20631!5e0!3m2!1sen!2sin!4v1760538523007!5m2!1sen!2sin"
               width="100%"
               height="300"

@@ -11,16 +11,38 @@ const Home = () => {
     <div className="min-h-screen bg-gradient-to-br from-neutral-50 via-neutral-100 to-neutral-50 text-neutral-800 font-sans">
 
       {/* Mobile Hero Image - Only visible on mobile */}
-      <div className="md:hidden w-full flex items-center justify-center p-4">
-        <div className="relative group">
-          <div className="absolute -inset-2 bg-gradient-to-br from-orange-300 to-orange-500 rounded-[60%_40%_30%_70%_/_60%_30%_70%_40%] transform -rotate-6 group-hover:rotate-0 transition-transform duration-700"></div>
-          <img
-            src="/hero.webp"
-            alt="PDI Experts Logo"
-            className="relative w-full h-auto rounded-[60%_40%_30%_70%_/_60%_30%_70%_40%] border-4 border-white shadow-2xl transform group-hover:scale-105 transition-all duration-500"
-          />
-        </div>
-      </div>
+<div className="md:hidden w-full flex items-center justify-center p-6">
+  <div className="relative group">
+    {/* Ripple Effect Container */}
+    <div className="absolute inset-0 overflow-hidden rounded-[40%_60%_70%_30%_/_50%_60%_40%_50%]">
+      <div className="absolute inset-0 bg-gradient-to-br from-transparent via-orange-200/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-1000"></div>
+      
+      {/* Ripple circles */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-0 h-0 bg-orange-300/30 rounded-full group-hover:w-32 group-hover:h-32 group-hover:opacity-0 transition-all duration-1000 delay-100"></div>
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-0 h-0 bg-orange-400/20 rounded-full group-hover:w-40 group-hover:h-40 group-hover:opacity-0 transition-all duration-1000 delay-300"></div>
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-0 h-0 bg-orange-500/10 rounded-full group-hover:w-48 group-hover:h-48 group-hover:opacity-0 transition-all duration-1000 delay-500"></div>
+    </div>
+
+    {/* Image with faded edges */}
+    <div className="relative">
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-white/10 rounded-[40%_60%_70%_30%_/_50%_60%_40%_50%] z-20 mix-blend-soft-light"></div>
+      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-white/5 rounded-[40%_60%_70%_30%_/_50%_60%_40%_50%] z-20 mix-blend-overlay"></div>
+      
+      <img
+        src="/herosm.webp"
+        alt="Professional PDI Inspection"
+        className="relative w-full h-auto rounded-[40%_60%_70%_30%_/_50%_60%_40%_50%] shadow-2xl transform group-hover:scale-105 transition-all duration-500 z-10"
+        style={{
+          maskImage: 'radial-gradient(circle at center, black 60%, transparent 95%)',
+          WebkitMaskImage: 'radial-gradient(circle at center, black 60%, transparent 95%)'
+        }}
+      />
+    </div>
+
+    {/* Subtle border glow on hover */}
+    <div className="absolute inset-0 rounded-[40%_60%_70%_30%_/_50%_60%_40%_50%] bg-gradient-to-br from-orange-100/0 via-orange-200/0 to-orange-100/0 group-hover:from-orange-100/30 group-hover:via-orange-200/20 group-hover:to-orange-100/30 transition-all duration-700 blur-sm group-hover:blur-0 z-0"></div>
+  </div>
+</div>
 
       {/* Hero Section */}
       <section className="py-12 md:min-h-[calc(100vh-4rem)] flex items-center relative overflow-hidden">
@@ -81,7 +103,7 @@ const Home = () => {
       <section id="why-us" className="py-24 px-4 md:px-8 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-4xl font-bold text-neutral-900 mb-4">Why Choose PDI Experts?</h2>
+            <h2 className="text-4xl md:text-4xl font-bold text-neutral-900 mb-4">Why Choose PDI Mafia?</h2>
             <p className="text-neutral-500 text-lg">Excellence delivered with every inspection</p>
             <div className="w-16 h-1 bg-orange-400 mx-auto mt-4 rounded-full"></div>
           </div>
@@ -191,7 +213,7 @@ const Home = () => {
                 <div className="w-10 h-10 bg-orange-400 rounded-lg flex items-center justify-center">
                   <FaTools className="text-white" />
                 </div>
-                <h3 className="text-lg font-bold text-white">PDI Experts</h3>
+                <h3 className="text-lg font-bold text-white">PDI Mafia</h3>
               </div>
               <p className="text-sm text-neutral-400 leading-relaxed">
                 Professional Pre-Delivery Inspection services for your peace of mind.
@@ -240,7 +262,7 @@ const Home = () => {
                   </li>
                   <li className="flex items-center gap-2">
                     <FaEnvelope className="text-orange-400 flex-shrink-0" />
-                    <a href="mailto:pdiexpert01@gmail.com" className="hover:text-orange-400 transition-colors">pdiexpert01@gmail.com</a>
+                    <a href="mailto:pdimafia01@gmail.com" className="hover:text-orange-400 transition-colors">pdimafia01@gmail.com</a>
                   </li>
                 </ul>
               </div>
@@ -280,7 +302,7 @@ const Home = () => {
           </div>
 
           <div className="border-t border-neutral-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-sm text-neutral-500">© 2025 PDI Experts. All rights reserved.</p>
+            <p className="text-sm text-neutral-500">© 2025 PDI Mafia. All rights reserved.</p>
             <div className="flex gap-6 text-sm">
               <a href="#" className="text-neutral-400 hover:text-orange-400 transition-colors">Privacy Policy</a>
               <a href="#" className="text-neutral-400 hover:text-orange-400 transition-colors">Terms of Service</a>

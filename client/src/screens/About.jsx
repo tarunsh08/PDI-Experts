@@ -26,7 +26,7 @@ const About = () => {
         <div className="absolute inset-0 bg-neutral-900/40 backdrop-blur-[1px]"></div>
         <div className="relative z-10 flex flex-col justify-center items-center text-center h-full px-4 md:px-6 py-12">
           <h1 className="text-3xl md:text-5xl font-extrabold mb-4 leading-tight tracking-wide text-neutral-50">
-            About <span className="text-orange-300">PDI Experts</span>
+            About <span className="text-orange-300">PDI Mafia</span>
           </h1>
           <p className="max-w-xl text-neutral-200 text-base md:text-lg mb-6 font-light">
             Discover the team and expertise behind our premium Pre-Delivery Inspection services.
@@ -41,7 +41,7 @@ const About = () => {
             Our Story
           </h2>
           <p className="text-neutral-700 text-base md:text-lg mb-8 text-center max-w-2xl mx-auto">
-            PDI Experts is dedicated to delivering excellence in Pre-Delivery Inspection services for cars. Founded with a passion for automotive care, we combine expert mechanics, premium parts, and a commitment to customer satisfaction. Our mission is to ensure every vehicle leaves our shop in peak condition, ready for the road ahead.
+            PDI Mafia is dedicated to delivering excellence in Pre-Delivery Inspection services for cars. Founded with a passion for automotive care, we combine expert mechanics, premium parts, and a commitment to customer satisfaction. Our mission is to ensure every vehicle leaves our shop in peak condition, ready for the road ahead.
           </p>
 
           <h2 className="text-2xl md:text-3xl font-bold text-neutral-800 mb-6 text-center">
