@@ -9,7 +9,7 @@ const app = express();
 app.use(express.json());
 
 app.use(cors({
-    origin: ["https://pdi-experts-l99p.vercel.app" || "https://www.pdi-experts.in"],
+    origin: "https://pdimafia.in",
     credentials: true
 }));
 
