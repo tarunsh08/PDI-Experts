@@ -9,7 +9,7 @@ const app = express();
 app.use(express.json());
 
 app.use(cors({
-    origin: ['https://pdimafia.in', 'https://www.pdimafia.in'],
+    origin: ['https://pdimafia.com', 'https://www.pdimafia.com'],
     credentials: true
 }));
 
