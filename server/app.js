@@ -6,12 +6,18 @@ import cors from 'cors'
 
 const app = express();
 
+const corsOptions = {
+    origin: ['https://pdimafia.com', 'https://www.pdimafia.com'],
+    credentials: true,
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS', 'PATCH'],
+    allowedHeaders: ['Content-Type', 'Authorization'],
+};
+
 app.use(express.json());
 
-app.use(cors({
-    origin: ['https://pdimafia.com', 'https://www.pdimafia.com'],
-    credentials: true
-}));
+// Handle ALL preflight OPTIONS requests globally (must be before routes)
+app.options('*', cors(corsOptions));
+app.use(cors(corsOptions));
 
 app.use('/api/v1/appointment', appointmentRoutes);
 app.use('/api/v1/admin', adminRoutes);
